@@ -1,30 +1,45 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+  <div class="container">
+    <ul class="aside">
+      <router-link v-for="item in menuList" :to="item.path" :key="item.name" >{{ item.meta.title }}</router-link>
+    </ul>
+    <div class="main">
+      <router-view/>
+    </div>
   </div>
-  <router-view/>
 </template>
 
+<script setup>
+  import {useRouter} from 'vue-router'
+  const router = useRouter()
+  const menuList = router.options.routes
+
+</script>
+
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.container {
+  display: flex;
+  overflow: auto;
+  width: 100vw;
+  height: 100vh;
+}
+.aside {
+  flex: none;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+}
+.aside a {
   text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-}
-
-#nav a {
+  padding-top: 10px;
+  padding-bottom: 10px;
   font-weight: bold;
-  color: #2c3e50;
 }
-
-#nav a.router-link-exact-active {
-  color: #42b983;
+.main {
+  flex: auto;
+  padding: 10px;
+  border-left: 1px solid #F5F5F5;
 }
 </style>
