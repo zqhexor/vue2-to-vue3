@@ -70,6 +70,32 @@ const routes = [
         }
       }
     ]
+  },
+  {
+    path: '/computed',
+    name: 'computed',
+    component: Home,
+    meta: {
+      title: 'computed'
+    },
+    children: [
+      {
+        path: 'getter',
+        name: 'Getter',
+        component: () => import(/* webpackChunkName: "Getter" */ '../views/computed/Getter'),
+        meta: {
+          title: 'getter函数（只读）'
+        }
+      },
+      {
+        path: 'getAndSet',
+        name: 'GetAndSet',
+        component: () => import(/* webpackChunkName: "GetAndSet" */ '../views/computed/GetAndSet'),
+        meta: {
+          title: 'getAndSet（可写）'
+        }
+      }
+    ]
   }
 ]
 
