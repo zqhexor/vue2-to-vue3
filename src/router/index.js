@@ -96,6 +96,24 @@ const routes = [
         }
       }
     ]
+  },
+  {
+    path: '/watch',
+    name: 'watch',
+    component: Home,
+    meta: {
+      title: 'watch'
+    },
+    children: [
+      {
+        path: 'watchSingle',
+        name: 'WatchSingle',
+        component: () => import(/* webpackChunkName: "WatchSingle" */ '../views/watch/WatchSingle'),
+        meta: {
+          title: '侦听单个数据源'
+        }
+      }
+    ]
   }
 ]
 

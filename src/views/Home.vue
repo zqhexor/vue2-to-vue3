@@ -1,15 +1,13 @@
 <template>
   <div class="pages-common">
     <h1>{{ route.meta.title }}</h1>
-    <router-view/>
+    <router-view />
   </div>
 </template>
 
 <script setup>
-  import {useRoute} from 'vue-router'
-  const route = useRoute()
+import { useRoute } from 'vue-router'
+const route = useRoute()
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>
