@@ -110,7 +110,23 @@ const routes = [
         name: 'WatchSingle',
         component: () => import(/* webpackChunkName: "WatchSingle" */ '../views/watch/WatchSingle'),
         meta: {
-          title: '侦听单个数据源'
+          title: '侦听单个数据源及停止侦听'
+        }
+      },
+      {
+        path: 'watchMultiple',
+        name: 'watchMultiple',
+        component: () => import(/* webpackChunkName: "WatchMultiple" */ '../views/watch/WatchMultiple'),
+        meta: {
+          title: '侦听多个数据源'
+        }
+      },
+      {
+        path: 'watchObject',
+        name: 'watchObject',
+        component: () => import(/* webpackChunkName: "WatchObject" */ '../views/watch/WatchObject'),
+        meta: {
+          title: '侦听引用对象'
         }
       }
     ]
