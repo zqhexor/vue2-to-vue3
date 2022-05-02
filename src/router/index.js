@@ -130,6 +130,24 @@ const routes = [
         }
       }
     ]
+  },
+  {
+    path: '/watchEffect',
+    name: 'watchEffect',
+    component: Home,
+    meta: {
+      title: 'watchEffect'
+    },
+    children: [
+      {
+        path: 'sideEffect',
+        name: 'sideEffect',
+        component: () => import(/* webpackChunkName: "SideEffect" */ '../views/watchEffect/SideEffect'),
+        meta: {
+          title: '副作用'
+        }
+      }
+    ]
   }
 ]
 
